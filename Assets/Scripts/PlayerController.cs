@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     public float horizontalInput;
     private float xBound = 22;
     public GameObject projectilePrefab;
+    public bool hasPowerUp;
+    public GameObject powerupIndicator; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +20,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
         ControlPlayer();
 
@@ -48,6 +52,18 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x > xBound)
         {
             transform.position = new Vector3(xBound, transform.position.y, transform.position.z);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+
+        if (other.CompareTag("PowerUp"))
+        {
+            hasPowerUp = true;
+            Destroy(other.gameObject);
+            powerupIndicator.gameObject.SetActive(true);
         }
     }
 }
