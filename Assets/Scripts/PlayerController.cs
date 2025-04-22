@@ -64,6 +64,14 @@ public class PlayerController : MonoBehaviour
             hasPowerUp = true;
             Destroy(other.gameObject);
             powerupIndicator.gameObject.SetActive(true);
+            StartCoroutine(PowerUpCountdown());
         }
+    }
+
+    IEnumerator PowerUpCountdown()
+    {
+        yield return new WaitForSeconds(10);
+        hasPowerUp = false;
+        powerupIndicator.gameObject.SetActive(false);
     }
 }

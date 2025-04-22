@@ -23,7 +23,7 @@ public class MoveForward : MonoBehaviour
     {
         if (playerController.hasPowerUp == true)
         {
-            Debug.Log("Bullets shot will track an enemy with the powerup equipped");
+            Debug.Log("Giant Bullet will spawn and blow up when hitting an enemy and blow up enemies near by.");
             Vector3 lookDirection = Enemy.transform.position - transform.position;
             transform.Translate((lookDirection).normalized * speed);
         }
