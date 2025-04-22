@@ -15,7 +15,7 @@ public class MoveForward : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
         playerController = GameObject.FindAnyObjectByType<PlayerController>();
         
-        Enemy = GameObject.FindGameObjectWithTag("Asteroid");
+        Enemy = GameObject.FindWithTag("Asteroid");
     }
 
     // Update is called once per frame
@@ -24,8 +24,10 @@ public class MoveForward : MonoBehaviour
         if (playerController.hasPowerUp == true)
         {
             Debug.Log("Bullets shot will track an enemy with the powerup equipped");
+            Vector3 lookDirection = Enemy.transform.position - transform.position;
+            transform.Translate((lookDirection).normalized * speed);
         }
-        else
+        else if(playerController.hasPowerUp == false)
         {
             transform.Translate(Vector3.up * Time.deltaTime * speed);
         }
