@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     private float xBound = 22;
     public GameObject projectilePrefab;
     public bool hasPowerUp;
-    public GameObject powerupIndicator; 
+    public GameObject powerupIndicator;
+    public GameObject missileProjectile;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,12 @@ public class PlayerController : MonoBehaviour
 
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && hasPowerUp)
+        {
+            Debug.Log("Giant Bullet will spawn and blow up when hitting an enemy and blow up enemies near by.");
+            Instantiate(missileProjectile, transform.position, projectilePrefab.transform.rotation);
+
+        } else if (Input.GetKeyDown(KeyCode.Mouse0) && hasPowerUp == false)
         {
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }

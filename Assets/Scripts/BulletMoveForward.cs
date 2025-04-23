@@ -12,25 +12,15 @@ public class MoveForward : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.FindWithTag("Player");
-        playerController = GameObject.FindAnyObjectByType<PlayerController>();
-        
-        Enemy = GameObject.FindWithTag("Asteroid");
+    
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerController.hasPowerUp == true)
-        {
-            Debug.Log("Giant Bullet will spawn and blow up when hitting an enemy and blow up enemies near by.");
-            Vector3 lookDirection = Enemy.transform.position - transform.position;
-            transform.Translate((lookDirection).normalized * speed);
-        }
-        else if(playerController.hasPowerUp == false)
-        {
+
             transform.Translate(Vector3.up * Time.deltaTime * speed);
-        }
+        
         
     }
 }
