@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Missile : MonoBehaviour
 {
-    public GameObject Explosion;
+    //public GameObject Explosion;
     // Start is called before the first frame update
+    SphereCollider explosionCollider;
     void Start()
     {
-        
+        explosionCollider = GameObject.Find("Explosion").GetComponent<SphereCollider>(); // Getting the sphere collidier from the Explosion child Gameobject for the explosion needed.
     }
 
     // Update is called once per frame
@@ -19,7 +20,8 @@ public class Missile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       Explosion.gameObject.SetActive(true);
+        Debug.Log("EXPLOSION!!!!!!!");
+        gameObject.SetActive(false);
 
     }
 }
