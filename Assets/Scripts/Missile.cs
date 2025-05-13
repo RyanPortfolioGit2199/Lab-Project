@@ -21,14 +21,15 @@ public class Missile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("EXPLOSION!!!!!!!");
-        InvokeRepeating("ExplosionRadius", 0.1f, 0.5f);
-
-       //gameObject.SetActive(false)
+        InvokeRepeating("ExplosionRadius", 0.1f, 60);
+        
     }
 
+    
 
-    void ExplosionRadius()
+
+    void ExplosionRadius() // A Method to increase the sphere collider radius on the Explosion Gameobject
     {
-        explosionCollider.radius *= 2;
+        explosionCollider.radius *= 10;
     }
 }

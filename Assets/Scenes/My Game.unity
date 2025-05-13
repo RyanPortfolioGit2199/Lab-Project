@@ -519,7 +519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalInput: 0
   projectilePrefab: {fileID: 4350887397012593885, guid: 774d9c4d713eb344bb41be70b2ab4342, type: 3}
-  hasPowerUp: 0
+  hasPowerUp: 1
   powerupIndicator: {fileID: 1423212431}
   missileProjectile: {fileID: 9176505852005749528, guid: 00026c848ed8fcd47acbe5e06005e8b4, type: 3}
 --- !u!135 &1549237125
