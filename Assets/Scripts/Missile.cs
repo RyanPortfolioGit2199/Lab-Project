@@ -21,7 +21,14 @@ public class Missile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("EXPLOSION!!!!!!!");
-        gameObject.SetActive(false);
+        InvokeRepeating("ExplosionRadius", 0.1f, 0.5f);
 
+       //gameObject.SetActive(false)
+    }
+
+
+    void ExplosionRadius()
+    {
+        explosionCollider.radius *= 2;
     }
 }
