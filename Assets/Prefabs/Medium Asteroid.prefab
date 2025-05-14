@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 7823489419603866952}
   - component: {fileID: 2497881234406319632}
   - component: {fileID: 8663529874992730839}
-  m_Layer: 0
+  - component: {fileID: -9092192868163290451}
+  m_Layer: 7
   m_Name: Medium Asteroid
   m_TagString: Asteroid
   m_Icon: {fileID: 0}
@@ -100,7 +101,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -121,3 +122,15 @@ MonoBehaviour:
   CurHealth: 2
   Damage: 1
   speed: -5
+--- !u!114 &-9092192868163290451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676199437432860003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d3d27ec8eab184a8b4a96bd64db284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
