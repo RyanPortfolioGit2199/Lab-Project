@@ -5,19 +5,24 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
     SphereCollider explosionCollider;
-    public float explosionSize = 45;
-    private float explosionRate = 8;
+    private float explosionRate = 1;
     private float radiusRate;
+    private float startDelay = 0.1f;
+    private float radiusInterval = 0.3f;
+    
     // Start is called before the first frame update
     void Start()
     {
         explosionCollider = GetComponent<SphereCollider>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        Exploading();
+
+        InvokeRepeating("Exploading", startDelay, radiusInterval);
+        StartCoroutine(ExplosionTimer());
         
     }
 
@@ -25,17 +30,18 @@ public class Explosion : MonoBehaviour
     void Exploading()
     {
 
-        if (explosionCollider.radius >= explosionSize)
-        {
-            radiusRate = explosionRate * Time.deltaTime; // to stop the radius from get stupidly huge at high frame rates.
+        radiusRate = explosionRate * Time.deltaTime; // to stop the radius from get stupidly huge at high frame rates.
 
-            explosionCollider.radius += radiusRate;
-        }
-
-        
+        explosionCollider.radius += radiusRate;
+      
     }
 
-
+    IEnumerator ExplosionTimer()
+    {
+        yield return new WaitForSeconds(4);
+        CancelInvoke("Exploding");
+        Destroy(gameObject);
+    }
 
     
 }

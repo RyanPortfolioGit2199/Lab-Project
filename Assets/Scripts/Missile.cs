@@ -27,7 +27,7 @@ public class Missile : MonoBehaviour
     {
         Debug.Log("EXPLOSION!!!!!!!");
         Instantiate(Explosion, transform.position, Explosion.transform.rotation);
-        //Destroy(gameObject);
+        Destroy(gameObject);
             
         
         
