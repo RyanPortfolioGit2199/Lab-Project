@@ -19,8 +19,8 @@ public class MoveForward : MonoBehaviour
     void Update()
     {
 
-            
-        
-        
+
+        transform.Translate(Vector3.up * Time.deltaTime * speed);
+
     }
 }

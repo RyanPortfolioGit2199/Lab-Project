@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -7983880404064543912}
   m_Layer: 0
   m_Name: Explosion
-  m_TagString: Untagged
+  m_TagString: Missle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43,13 +43,13 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
-  m_ProvidesContacts: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.00001
@@ -66,4 +66,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c810e2734f0b04a907d7959af224de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionSize: 100

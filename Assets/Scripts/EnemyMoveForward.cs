@@ -22,8 +22,23 @@ public class EnemyMoveForward : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        CurHealth -= Damage;
+        if(other.gameObject.CompareTag("Bullet"))
+        {
+            CurHealth -= Damage;
+        }
+        else if (other.gameObject.CompareTag("Missle"))
+        {
+            CurHealth = 0;
+        }
 
+        Death();
+    }
+
+
+
+
+    private void Death()
+    {
         if (CurHealth <= 0)
         {
             Destroy(gameObject);
